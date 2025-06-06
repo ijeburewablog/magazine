@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ijebu Rewa Magazine - Ojude Oba 2025</title>
+    <style>
+        :root {
+            --primary: #1a5276;
+            --secondary: #e74c3c;
+            --whatsapp: #25D366;
+            --light: #f8f9fa;
+            --gold: #FFD700;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), #154360);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--secondary), var(--gold));
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        h2 {
+            margin: 10px 0 0;
+            font-weight: 400;
+            font-style: italic;
+        }
+        .magazine-cover {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 30px auto;
+            border: 5px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .magazine-cover:hover {
+            transform: scale(1.03);
+        }
+        .highlight-box {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid var(--secondary);
+            position: relative;
+        }
+        .highlight-box::after {
+            content: "✨";
+            position: absolute;
+            top: -15px;
+            right: 15px;
+            font-size: 24px;
+        }
+        .price-tag {
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.8rem;
+            display: inline-block;
+            border-radius: 50px;
+            margin: 15px 0;
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+            font-weight: bold;
+        }
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .benefit-item {
+            flex: 1 1 200px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--primary);
+            transition: transform 0.3s;
+        }
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+        .benefit-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .bank-details {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: relative;
+            border: 1px dashed var(--primary);
+        }
+        .copy-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background 0.3s;
+        }
+        .copy-btn:hover {
+            background-color: #154360;
+        }
+        .copy-btn.copied {
+            background-color: var(--whatsapp);
+        }
+        .payment-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            background-color: var(--whatsapp);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            font-weight: bold;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .submit-btn:hover {
+            background-color: #128C7E;
+        }
+        .hidden {
+            display: none;
+        }
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+        .steps {
+            counter-reset: step-counter;
+            margin: 30px 0;
+        }
+        .step {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+        .step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .file-upload {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .file-upload-preview {
+            max-width: 200px;
+            max-height: 200px;
+            display: none;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .website-badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            header {
+                padding: 30px 0;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .benefit-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ijebu Rewa Magazine</h1>
+            <h2>Ojude Oba 2025 Edition</h2>
+            <div class="price-tag">₦1,000</div>
+        </header>
+
+        <img src="ijebuimg.jpg" alt="Ijebu Rewa Magazine Cover" class="magazine-cover">
+
+        <div class="highlight-box">
+            <h3> Experience Ijebu Like Never Before</h3>
+            <p>Step into the soul of Ijebuland with the Ojude Oba 2025 Edition of Ijebu Rewa Magazine – a cultural masterpiece crafted for lovers of heritage, elegance, and untold stories.</p>
+            
+            <p> Inside this magazine, you'll discover:</p>
+            
+            <ul>
+                <li> The Royal Grandeur: Exclusive coverage of the Ojude Oba festival like you've never seen it — royal regalia, majestic horse riders, and fashion that redefines tradition.</li>
+                <li> Behind the Scenes: Candid interviews, iconic photographs, and never-before-heard stories from proud sons and daughters of Ijebuland.</li>
+                <li> Legacy & Lifestyle: Dive into the DNA of Ijebu culture — its values, victories, and the vibrant people who keep the legacy alive.</li>
+            </ul>
+            
+            <p>Whether you're home or abroad, this edition brings Ijebu to you — rich, bold, and unforgettable.</p>
+        </div>
+
+        <div class="steps">
+            <h3>How To Get Your Copy:</h3>
+            <div class="step">
+                <h4>Make Payment</h4>
+                <p>Pay <strong>₦1,000</strong> to the account details below:</p>
+                
+                <div class="bank-details">
+                    <p><strong>Bank:</strong> FCMB</p>
+                    <p><strong>Account Name:</strong> Ijebu Rewa</p>
+                    <p><strong>Account Number:</strong> <span id="accountNumber">2000631067</span>
+                       <button id="copyBtn" class="copy-btn">Copy</button></p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h4>Submit Payment Proof</h4>
+                <p>After payment, fill the form below with your details and upload your payment proof (screenshot or transaction ID).</p>
+            </div>
+            
+            <div class="step">
+                <h4>Receive Your Magazine</h4>
+                <p>We'll send the digital magazine to your WhatsApp within <strong>2 hours</strong> after verification.</p>
+            </div>
+        </div>
+
+        <div class="payment-form">
+            <h3>Submit Payment Details <span class="website-badge">Website Purchase</span></h3>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="name">Full Name (as shown on your bank account)</label>
+                    <input type="text" id="name" required placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">WhatsApp Number</label>
+                    <input type="tel" id="phone" required placeholder="08012345678" pattern="[0-9]{10,15}">
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" required>
+                        <option value="">Select payment method</option>
+                        <option value="bank-transfer">Bank Transfer</option>
+                        <option value="ussd">USSD</option>
+                        <option value="pos">POS</option>
+                    </select>
+                </div>
+               
+                <button type="submit" class="submit-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" class="whatsapp-icon" alt="WhatsApp">
+                    Submit via WhatsApp
+                </button>
+            </form>
+        </div>
+
+        <div id="thankYou" class="payment-form hidden">
+            <h3>✅ Thank You!</h3>
+            <p>Your payment proof has been submitted successfully.</p>
+            <p>Your magazine will be sent to your WhatsApp within <strong>2 hours</strong> after verification.</p>
+            <p>For immediate assistance, contact us on WhatsApp: <strong>07055358535</strong></p>
+        </div>
+
+        <footer>
+            <p>© 2025 Ijebu Rewa Magazine. All rights reserved.</p>
+            <p>Contact us on WhatsApp: <strong>07055358535</strong></p>
+        </footer>
+    </div>
+
+    <script>
+        const form = document.getElementById('paymentForm');
+        const thankYou = document.getElementById('thankYou');
+      
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+      
+          // Grab form values
+          const name = document.getElementById('name').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const paymentMethod = document.getElementById('payment-method').value;
+      
+          // Basic validation
+          if (!name || !phone || !paymentMethod) {
+            alert('Please fill in all required fields.');
+            return;
+          }
+      
+          // Compose WhatsApp message to admin
+          let message = `*IJEBU REWA MAGAZINE PURCHASE* (Website Order)\n\n`;
+          message += `📌 *Customer Details:*\n`;
+          message += `• Name: ${name}\n`;
+          message += `• WhatsApp: ${phone}\n\n`;
+          message += `💳 *Payment Information:*\n`;
+          message += `• Method: ${paymentMethod}\n`;
+          message += `• Amount: ₦1,000\n\n`;
+          message += `Kindly send the magazine to this WhatsApp number. Thank you!`;
+      
+          // Admin WhatsApp number without +
+          const adminNumber = '2347055358535'; // <-- Replace with your actual admin number
+      
+          // Create WhatsApp URL with encoded message
+          const whatsappURL = `https://wa.me/${adminNumber}?text=${encodeURIComponent(message)}`;
+      
+          // Confirm with user before opening WhatsApp
+          const confirmation = confirm(
+            `You will be redirected to WhatsApp to send your payment details.\n\n` +
+            `Please attach your payment proof screenshot and send the message.\n\n` +
+            `Click OK to proceed.`
+          );
+      
+          if (confirmation) {
+            // Open WhatsApp chat in new tab
+            window.open(whatsappURL, '_blank');
+      
+            // Show thank you message and hide form
+            form.classList.add('hidden');
+            thankYou.classList.remove('hidden');
+      
+            // Scroll to thank you message
+            thankYou.scrollIntoView({ behavior: 'smooth' });
+      
+            // Reset form (optional)
+            form.reset();
+          }
+        });
+        document.getElementById('copyBtn').addEventListener('click', async function() {
+  const textToCopy = "2000631067"; // Replace with your desired text
+  
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+    this.textContent = 'Copied!'; // Visual feedback
+    setTimeout(() => { this.textContent = 'Copy'; }, 2000); // Reset after 2 seconds
+  } catch (err) {
+    console.error('Failed to copy:', err);
+    // Fallback for non-HTTPS or older browsers
+    const textarea = document.createElement('textarea');
+    textarea.value = textToCopy;
+    textarea.style.position = 'fixed'; // Avoid scrolling to bottom
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    this.textContent = 'Copied!';
+    setTimeout(() => { this.textContent = 'Copy'; }, 2000);
+  }
+});
+      </script>
+      
+</body>
+</html>
